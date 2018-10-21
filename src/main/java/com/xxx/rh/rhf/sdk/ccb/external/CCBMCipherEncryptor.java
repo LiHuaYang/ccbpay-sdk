@@ -1,6 +1,6 @@
 package com.xxx.rh.rhf.sdk.ccb.external;
 
-import org.apache.commons.codec.binary.Base64;
+import com.xxx.rh.rhf.sdk.ccb.internal.codec.Base64;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import javax.crypto.*;

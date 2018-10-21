@@ -23,14 +23,10 @@ maven 引入
 
 ```xml
 <dependency>
-    <groupId>commons-digester</groupId>
-    <artifactId>commons-digester</artifactId>
+    <groupId>commons-logging</groupId>
+    <artifactId>commons-logging</artifactId>
 </dependency>
-<dependency>
-    <groupId>commons-codec</groupId>
-    <artifactId>commons-codec</artifactId>
-</dependency>
-
+        
 <!-- 用于 ftp 下载 -->
 <dependency>
     <groupId>commons-net</groupId>
@@ -74,7 +70,7 @@ String amount = "0.01";
 String orderId = String.valueOf(System.currentTimeMillis());
 CCBWapQRCodePayReq model = new CCBWapQRCodePayReq(merchantId, posId, branchId, orderId, amount);
 model.setReturntype("3");
-model.setRemark1("QT330");
+model.setRemark1("QT330001");
 model.setRemark2("");
 
 CCBWapQRCodePayResp resp = new CCBWapPayRequestClient().qrCodePay(model, transUrl, publicKey);
@@ -121,7 +117,7 @@ String merchantId = "";
 String posId = "";
 String branchId = "";
 
-String orderId = "";
+String orderId = "1533610631529";
 String qrCodeType = "2";
 
 CCBWapScanPayQueryReq model = new CCBWapScanPayQueryReq(merchantId, posId, branchId, orderId, qrCodeType);
@@ -133,7 +129,7 @@ System.out.println("扫码支付查询结果：" + resp);
 
 需要先启动外联平台，和 ftp 服务
 
-- **外联平台支付流水查询（5w1）**
+- **外联平台支付流水查询（5w1002）**
 
 ```java
 String merchantId = "";
@@ -143,7 +139,7 @@ String password = "";
 String ip = "10.60.45.119";
 String port = "12345";
 
-CCBEbsPayQueryReq model = new CCBEbsPayQueryReq(merchantId, userId, password, "5W1", "");
+CCBEbsPayQueryReq model = new CCBEbsPayQueryReq(merchantId, userId, password, "5W1002", "1533610631529");
 CCBEbsQueryResp resp = new CCBEbsPayRequestClient().queryTrans(model, ip, port);
 System.out.println("外联平台查询返回为：" + resp);
 ```
@@ -152,7 +148,7 @@ System.out.println("外联平台查询返回为：" + resp);
 
 ```java
 String merchantId = "";
-String userId = "";
+String userId = "001";
 String password = "";
 
 String ip = "10.60.45.119";
@@ -168,13 +164,13 @@ System.out.println("外联平台查询返回为：" + resp);
 
 ```java
 String merchantId = "";
-String userId = "";
+String userId = "001";
 String password = "";
 
 String ip = "10.60.45.119";
 String port = "12345";
 
-CCBEbsRefundReq model = new CCBEbsRefundReq(merchantId, userId, password, "0.01", "");
+CCBEbsRefundReq model = new CCBEbsRefundReq(merchantId, userId, password, "0.01", "1533610631529");
 CCBEbsRefundResp resp = new CCBEbsPayRequestClient().refund(model, ip, port);
 System.out.println("外联平台退款返回为：" + resp);
 ```
@@ -183,7 +179,7 @@ System.out.println("外联平台退款返回为：" + resp);
 
 ```java
 String merchantId = "";
-String userId = "";
+String userId = "001";
 String password = "";
 
 String ip = "10.60.45.119";
@@ -201,13 +197,13 @@ System.out.println("外联平台查询返回为：" + resp);
 
 ```java
 String merchantId = "";
-String userId = "";
+String userId = "001";
 String password = "";
 
 String ip = "10.60.45.119";
 String port = "12345";
 
-String source = "SHOP..20180807.20180807.20180808161500342.MvXZ.zip";
+String source = "";
 String filePath = "merchant/shls";
 String localRemote = "0";
 
@@ -220,7 +216,7 @@ System.out.println("外联平台查询返回为：" + resp);
 
 ```java
 String merchantId = "";
-String userId = "";
+String userId = "001";
 String password = "";
 
 String ip = "10.60.45.119";

@@ -1,6 +1,5 @@
 package com.xxx.rh.rhf.sdk.ccb.internal.codec;
 
-import org.apache.commons.codec.digest.DigestUtils;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 
